@@ -1,0 +1,19 @@
+.slick-prev,
+.slick-next {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #222222;
+  border: 2px solid #222222;
+  font-size: 14px;
+  line-height: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: #222222;
+  color: #ffffff;
+}

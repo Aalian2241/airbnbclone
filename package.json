@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mui/material": "^5.12.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -14,7 +15,10 @@
     "react-icons": "^4.8.0",
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
+    "react-sticky-box": "^2.0.4",
     "redux-toolkit": "^1.1.2",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
