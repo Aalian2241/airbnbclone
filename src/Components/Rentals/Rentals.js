@@ -21,7 +21,7 @@ const rental_items=[
 const Rentals = () => {
   return (
     <>
-    <div className='p-4 '>
+    <div className='p-4 relative z-1'>
         <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-7 '>
             {rental_items.map((item, index) => (
                 <Rental images={item.images}/>
