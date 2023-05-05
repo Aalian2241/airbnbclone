@@ -5,8 +5,8 @@ import Right from './Right'
 
 const SearchNavbar = () => {
   return (
-    <div className=' py-5 
-        lg:mx-10 md:mx-5 sm:mx-5  
+    <div className='
+        lg:mx-10 md:mx-5 sm:mx-1 
         flex justify-between items-center 
         
     '>

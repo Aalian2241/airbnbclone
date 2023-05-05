@@ -7,7 +7,7 @@ const Middle = () => {
     <div className=' flex flex-row shadow-md items-center hover:shadow-lg cursor-pointer border border-gray-300 rounded-full'>
 
       <div className='flex lg:pl-8 lg:pr-3 border-r border-gray-500'>
-        <p className=''>
+        <p className='sm:text-sm'>
           Anywhere
         </p>
       </div>
