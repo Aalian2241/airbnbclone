@@ -2,35 +2,11 @@ import React from 'react'
 
 const FilterNavbar = () => {
   return (
-    <div className=''>
-        <p className='text-9xl'>
+    <>
+        <p className='text-3xl h-[2rem] bg-red-700'>
             asdasd
         </p>
-        <p className='text-9xl'>
-            asdasd
-        </p>
-        <p className='text-9xl'>
-            asdasd
-        </p>
-        <p className='text-9xl'>
-            asdasd
-        </p>
-        <p className='text-9xl'>
-            asdasd
-        </p>
-        <p className='text-9xl'>
-            asdasd
-        </p>
-        <p className='text-9xl'>
-            asdasd
-        </p>
-        <p className='text-9xl'>
-            asdasd
-        </p>
-        <p className='text-9xl'>
-            asdasd
-        </p>
-    </div>
+    </>
   )
 }
 

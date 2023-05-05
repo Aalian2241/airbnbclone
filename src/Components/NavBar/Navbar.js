@@ -4,13 +4,10 @@ import SearchNavbar from '../SearchNavbar/SearchNavbar'
 
 const Navbar = () => {
   return (
-    <div className='bg-gray-100 flex flex-col relative border-b border-solid border-gray-600'>
-        <div className='sticky top-0 bg-white'>
+    <div className='sticky top-0 z-300 bg-gray-100 flex flex-col border-b border-solid border-gray-600'>
             <SearchNavbar/>
-        </div>
-        <div>
+
             <FilterNavbar/>
-        </div>
         
     </div>
     
