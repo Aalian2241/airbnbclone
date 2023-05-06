@@ -6,14 +6,10 @@ const Rental = ({images}) => {
   return (
     <div className="">
                 <div className=" hover:cursor-pointer ">
-                    <div className="grad absolute w-full h-full rounded-b-[1.3rem]"></div>
+                    <div className="grad absolute h-full"></div>
                         <div className="">
                         {/* Background */}
-                        <img
-                            src={images}
-                            alt=""
-                            className="object-cover rounded-[1.3rem] sm:h-[17rem]  md:h-[20rem] w-full lg:h-[21rem]"
-                        />
+                            <Carousel slides={images}/>
                         {/* Title */}
                         {/* <div className="absolute text-white font-bold bottom-6 left-6 text-[22px] flex items-center gap-2">
                             asdasd

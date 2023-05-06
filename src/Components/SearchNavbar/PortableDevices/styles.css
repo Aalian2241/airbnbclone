@@ -1,0 +1,15 @@
+.left-container{
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+
+}
+
+.left2{
+    display: flex;
+    justify-content: start;
+}
+

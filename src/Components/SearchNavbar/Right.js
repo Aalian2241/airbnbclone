@@ -2,12 +2,13 @@ import React from 'react'
 import { BiMenu, BiWorld} from "react-icons/bi";
 import {BsPersonCircle} from "react-icons/bs";
 const Right = () => {
+  const divStyle = "p-3  text-sm  whitespace-nowrap text-overflow:ellipsis"
+
   return (
     <div className='flex justify-around items-center'>
-      <div className='flex hover:bg-gray-200 cursor-pointer p-3 rounded-full mr-0'>
-        <p className=''>Airbnb Your Home</p>
-
-      </div>
+      <button className='m-[-1] flex text-left rounded-full hover:shadow-lg cursor-pointer hover:bg-gray-200'>
+        <div className={divStyle}>Airbnb Your home</div>
+      </button>
       <div className='lg:mx-2 hover:bg-gray-200 cursor-pointer p-3 rounded-full '>
         <BiWorld size={24}/>
       </div>

@@ -3,7 +3,7 @@ import React from 'react'
 const FilterNavbar = () => {
   return (
     <>
-        <p className='text-3xl h-[2rem] bg-red-700'>
+        <p className='text-3xl mb-2 h-[2rem] border-gray-100'>
             asdasd
         </p>
     </>
