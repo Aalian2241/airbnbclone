@@ -17,7 +17,7 @@ const Carousel = ({slides}) => {
         <div className='flex bg-transparent rounded-[1.6rem] relative border transition-transform ease-out duration-600 ' style={{transform: `translateX(-${curr*100-1}%)`}}>
           {slides.map((s) => {
             return (
-              <img className="object-cover rounded-[1.3rem] sm:h-[17rem] md:h-[20rem] w-full lg:h-[21rem]" src={s} />
+              <img className="object-cover rounded-[1.3rem] sm:h-[20rem] md:h-[20rem] w-full lg:h-[21rem]" src={s} />
             );
           })}
         </div>

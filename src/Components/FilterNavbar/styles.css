@@ -1,0 +1,10 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr ;
+  }
+  button.visited:active,
+  button.visited:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+  }
+  
