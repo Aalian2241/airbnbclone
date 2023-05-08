@@ -6,8 +6,11 @@ import Middle from './Middle'
 import DynamicSearchBar from './PortableDevices/DynamicSearchBar'
 import Right from './Right'
 import FilterModal from '../Modals/Modal'
+import { selectToggleModal } from '../../Redux/Slices/slices'
+import { useSelector } from 'react-redux'
 
 const SearchNavbar = () => {
+
   const [isPortable, setIsPortable] = useState(false);
 
 
@@ -23,9 +26,10 @@ const SearchNavbar = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
+  const modalValue = useSelector(selectToggleModal)
+  const myRef = React.useRef(null);
   return (
-    <div>
+    <div ref={myRef}>
       {
         isPortable && <DynamicSearchBar/>
       }
@@ -38,14 +42,15 @@ const SearchNavbar = () => {
               
           >
               <Left/>
-              <FilterModal/>
+      
               <Middle/>
     
               <Right/>
           </div>
       </header>
          }
-    
+    {modalValue  && <FilterModal parent={myRef}/>}
+        
     </div>
     
   )
