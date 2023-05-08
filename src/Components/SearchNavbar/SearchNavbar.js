@@ -1,16 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { useMediaQuery } from 'react-responsive'
 import Left from './Left'
 import Middle from './Middle'
 import DynamicSearchBar from './PortableDevices/DynamicSearchBar'
 import Right from './Right'
+import FilterModal from '../Modals/Modal'
 
 const SearchNavbar = () => {
   const [isPortable, setIsPortable] = useState(false);
 
-  const is1024px = useMediaQuery({ maxWidth: 700 });
 
   useEffect(() => {
     function handleResize() {
@@ -39,7 +38,7 @@ const SearchNavbar = () => {
               
           >
               <Left/>
-    
+              <FilterModal/>
               <Middle/>
     
               <Right/>
