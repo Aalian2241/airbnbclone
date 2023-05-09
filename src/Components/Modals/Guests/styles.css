@@ -1,0 +1,35 @@
+.Guest-container{
+    
+    position: absolute;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap:2rem;
+    padding-top:0.9rem;
+    padding-bottom:0.8rem;
+    align-items: center;
+    top: 4.9rem;
+    width:24rem;
+    right: 1rem;
+    overflow: hidden;
+    flex-direction: column;
+    border-top-left-radius: 2.7rem;
+    border-bottom-left-radius: 2.7rem; 
+
+
+    
+}
+
+.guest-contents{
+    display: flex;
+    width:100%;
+    padding-left:1.3rem;
+    padding-right:1.3rem;
+    
+
+}
+.guest-text-section{
+    display: flex;
+    flex-direction: column;
+    flex-grow:1;
+}
