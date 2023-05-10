@@ -25,7 +25,7 @@ const Guests = ({containerRef}) => {
           </div>
 
           <div className='flex'>
-            <Counter/>
+            <Counter guestType={'Adults'}/>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ const Guests = ({containerRef}) => {
           </div>
 
           <div className='flex'>
-            <Counter/>
+            <Counter guestType={'Children'}/>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ const Guests = ({containerRef}) => {
           </div>
 
           <div className='flex'>
-            <Counter/>
+            <Counter guestType={'Infants'}/>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@ const Guests = ({containerRef}) => {
           </div>
 
           <div className='flex'>
-            <Counter/>
+            <Counter guestType={'Pets'}/>
           </div>
         </div>
       </div>

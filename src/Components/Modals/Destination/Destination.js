@@ -2,7 +2,14 @@ import React from 'react'
 import "./styles.css";
 import { Slide } from '@mui/material';
 import { regions } from './regions';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectDestination, setDestination } from '../../../Redux/Slices/slices';
+
+
 const Destination = ({containerRef}) => {
+  const dispatch = useDispatch();
+  const dest = useSelector(selectDestination);
+
   return (
     <Slide 
     direction='up'  
@@ -17,7 +24,11 @@ const Destination = ({containerRef}) => {
       <div className='grid grid-cols-3 gap-3'>
         {regions.map((item, index) => (
                 <div className='flex flex-col'>
-                  <button className='flex flex-grow bg-transparent rounded-[1.6rem] border hover:border-black'>
+                  <button 
+                      onClick={()=>{dispatch(setDestination({id:item.id, desc:item.desc}))}}
+                      className={
+                      `flex flex-grow bg-transparent rounded-[1.6rem] border hover:border-black
+                      ${(dest&& item.id===dest.id)? "border-black border-2 " : ""}`}>
                     <img alt='sad' className='object-cover rounded-[1.6rem] sm:h-[10rem] md:h-[10rem] w-full lg:h-[14 rem]' src={item.src} />
                   </button>
 

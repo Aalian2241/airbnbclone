@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Modal } from 'react-responsive-modal';
 import "./styles.css"
-import { selectToggleModal, setToggleModal } from '../../Redux/Slices/slices';
+import { selectCheckinDate, selectCheckoutDate, selectDestination, selectToggleModal, selectTotalGuests, setDestination, setToggleModal } from '../../Redux/Slices/slices';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiSearch } from 'react-icons/bi';
 import Guests from './Guests/Guests';
@@ -14,13 +14,23 @@ import {  Zoom } from '@mui/material';
 const span2 = 'text-gray-600 lg:text-[1rem] md:text-[0.9rem] text-[0.7rem]  sm:min-w-[130%] md:w-[100%] lg:max-w-[100%]';
 const span1 = 'text-[0.7rem] lg:text-[1rem] md:text-[0.94rem] w-[130%] md:w-[100%] lg:max-w-[100%]'
 const where = "text-[0.7rem] lg:text-[1rem] md:text-[0.94rem] w-[130%] md:w-[100%] lg:max-w-[100%] text-start";
-const dest =  "text-gray-600 lg:text-[1rem] md:text-[0.9rem] text-[0.7rem]  sm:min-w-[130%] md:w-[100%] lg:max-w-[100%] text-start"
+const destStyle =  "text-gray-600 lg:text-[1rem] md:text-[0.9rem] text-[0.7rem]  sm:min-w-[130%] md:w-[100%] lg:max-w-[100%] text-start"
 const FilterModal = ({parent}) => {
+    // SELECTORS
+    const totalGuests = useSelector(selectTotalGuests)
+    const dest = useSelector(selectDestination);
+    const checkinDate = useSelector(selectCheckinDate);
+    const checkoutDate = useSelector(selectCheckoutDate)
+
     const guestRef = useRef(null)
     const [checked,setChecked] = useState(false);
+    const [state, setState] = useState(0);
     const [activeButton, setActiveButton] = useState(false);
+
+
     function handleClick(index) {
       setActiveButton(index);
+      setState((prevState) => (prevState ? 0 : index));
     }
     // console.log("active button: "+ activeButton)
 
@@ -31,22 +41,9 @@ const FilterModal = ({parent}) => {
     const dispatch = useDispatch()
     const onCloseModal = () =>{
       setOpen(false);
-      dispatch(setToggleModal(false))
+      dispatch(setToggleModal(false));
+      dispatch(setDestination(null));
   }
-
-    // useEffect(() => {
-    //     console.log('i shouldnt work')
-    //     const handleScroll = () => {
-    //       setOpen(false)
-    //       dispatch(setToggleModal(false));
-    //     };
-    
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //       window.removeEventListener('scroll', handleScroll);
-    //     };
-    //   }, [open]); 
-
     
     return (
       <div className='sticky top-40'>
@@ -86,10 +83,10 @@ const FilterModal = ({parent}) => {
                 w-[31vw] 
                 pl-8 ${activeButton === 1 ? "visited shadow-2xl" : ""}`}>
                   <span  className={where}>Where</span>
-                  <span className={dest}>Search Destinations</span>
+                  <span className={destStyle}>{dest?<>{dest.desc}</>: <>Search Destination</>}</span>
                 </button>
                 <div ref={parent.current}>
-                  {activeButton===1 && <Destination containerRef={guestRef}/> }
+                  {state===1 && <Destination containerRef={guestRef}/> }
 
                 </div>
               </div>
@@ -103,23 +100,23 @@ const FilterModal = ({parent}) => {
               
                   <button 
                   onClick={() =>{setChecked(true); handleClick(2)}}
-                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full md:pr-[1.6rem] pr-[1rem] ${(activeButton===2||activeButton===3) ? "visited shadow-2xl opacity-0" : ""}`}>
+                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full md:pr-[1.6rem] pr-[1rem] ${(state===2||state===3) ? "visited shadow-2xl opacity-0" : ""}`}>
                     <span className={span1}>Check in</span>
-                    <span className={span2}>Add Dates</span>
+                    <span className={span2}>{checkinDate.day?<>{checkinDate.month} {checkinDate.day}, {checkinDate.year}</>:<>Add Dates</>}</span>
                   </button>
  
 
                 
                   <button 
                   onClick={() => {setChecked(true); handleClick(3)}}
-                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full lg:pr-[3rem] md:pr-[2rem] pr-[1rem]${(activeButton===2||activeButton===3)? "visited shadow-2xl opacity-0" : ""}`}
+                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full lg:pr-[3rem] md:pr-[2rem] pr-[1rem] ${(state===2||state===3)? "visited shadow-2xl opacity-0" : ""}`}
                   > 
                     <span className={span1}>Check out</span>
-                    <span className={span2}>Add Dates</span>
+                    <span className={span2}>{checkoutDate.day?<>{checkoutDate.month} {checkoutDate.day}, {checkoutDate.year}</>:<>Add Dates</>}</span>
                   </button>
               
                 <div ref={parent.current}>
-                  {(activeButton===2||activeButton===3) && <Calendar_  containerRef={guestRef}/> }
+                  {(state===2||state===3) && <Calendar_  containerRef={guestRef}/> }
                 </div>
               </button>
 
@@ -134,7 +131,7 @@ const FilterModal = ({parent}) => {
   
                   className={`flex flex-col p-[0.8rem] rounded-full pr-[3rem] `}>
                     <span className={span1}>Who</span>
-                    <span className={span2}>Add Guests</span>
+                    <span className={span2}>{totalGuests>0? <>{totalGuests} guests</>: <>Add Guests</>}</span>
                   </button>
 
                 
@@ -145,7 +142,7 @@ const FilterModal = ({parent}) => {
                   </button>
                 </div>
                 <div ref={parent.current}>
-                  {activeButton===4 && <Guests containerRef={guestRef}/> }
+                  {state===4 && <Guests containerRef={guestRef}/> }
 
                 </div>
               </div>
