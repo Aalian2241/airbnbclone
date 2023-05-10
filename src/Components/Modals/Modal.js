@@ -7,6 +7,8 @@ import { BiSearch } from 'react-icons/bi';
 import Guests from './Guests/Guests';
 import Calendar from './Calendar/Calendar';
 import Destination from './Destination/Destination';
+import DateRangePicker from 'react-bootstrap-daterangepicker';
+import Calendar_ from './Calendar/Calendar';
 
 // const divClass = "flex flex-col p-[0.8rem] hover:bg-gray-300 rounded-full pr-[3rem]";
 const span2 = 'text-gray-600 lg:text-[1rem] md:text-[0.9rem] text-[0.7rem]  sm:min-w-[130%] md:w-[100%] lg:max-w-[100%]';
@@ -94,27 +96,29 @@ const FilterModal = ({parent}) => {
               
 
               {/* CHECK-IN and OUT SECTION */}
-
-              <div className='flex justify-center bg-red items-center relative'>
-                <button 
-                onClick={() => handleClick(2)}
-                className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full md:pr-[1.6rem] pr-[1rem] ${activeButton === 2 ? "visited shadow-2xl" : ""}`}>
-                  <span className={span1}>Check in</span>
-                  <span className={span2}>Add Dates</span>
-                </button>
-                <button 
-                onClick={() => handleClick(3)}
-                className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full lg:pr-[3rem] md:pr-[2rem] pr-[1rem]${activeButton === 3 ? "visited shadow-2xl" : ""}`}
-                >
-                  <span className={span1}>Check out</span>
-                  <span className={span2}>Add Dates</span>
-                </button>
+              {/* <DateRangePicker 
+                initialSettings={{ startDate: '1/1/2014', endDate: '3/1/2014' }}
+              > */}
+              <button className='flex justify-center bg-red items-center relative'>
+                  <button 
+                  onClick={() => handleClick(2)}
+                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full md:pr-[1.6rem] pr-[1rem] ${activeButton === 2 ? "visited shadow-2xl" : ""}`}>
+                    <span className={span1}>Check in</span>
+                    <span className={span2}>Add Dates</span>
+                  </button>
+                  <button 
+                  onClick={() => handleClick(3)}
+                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full lg:pr-[3rem] md:pr-[2rem] pr-[1rem]${activeButton === 3 ? "visited shadow-2xl" : ""}`}
+                  > 
+                    <span className={span1}>Check out</span>
+                    <span className={span2}>Add Dates</span>
+                  </button>
                 <div ref={parent.current}>
-                  {(activeButton===2||activeButton===3) && <Calendar /> }
+                  {(activeButton===2||activeButton===3) && <Calendar_ /> }
 
                 </div>
-              </div>
-
+              </button>
+              {/* </DateRangePicker> */}
               {/* SEARCH AND GUESTS SECTION*/}
               <div 
                 ref={guestRef}
