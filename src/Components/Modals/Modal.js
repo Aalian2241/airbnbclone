@@ -5,10 +5,10 @@ import { selectToggleModal, setToggleModal } from '../../Redux/Slices/slices';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiSearch } from 'react-icons/bi';
 import Guests from './Guests/Guests';
-import Calendar from './Calendar/Calendar';
 import Destination from './Destination/Destination';
-import DateRangePicker from 'react-bootstrap-daterangepicker';
+
 import Calendar_ from './Calendar/Calendar';
+import {  Zoom } from '@mui/material';
 
 // const divClass = "flex flex-col p-[0.8rem] hover:bg-gray-300 rounded-full pr-[3rem]";
 const span2 = 'text-gray-600 lg:text-[1rem] md:text-[0.9rem] text-[0.7rem]  sm:min-w-[130%] md:w-[100%] lg:max-w-[100%]';
@@ -17,12 +17,12 @@ const where = "text-[0.7rem] lg:text-[1rem] md:text-[0.94rem] w-[130%] md:w-[100
 const dest =  "text-gray-600 lg:text-[1rem] md:text-[0.9rem] text-[0.7rem]  sm:min-w-[130%] md:w-[100%] lg:max-w-[100%] text-start"
 const FilterModal = ({parent}) => {
     const guestRef = useRef(null)
-    
+    const [checked,setChecked] = useState(false);
     const [activeButton, setActiveButton] = useState(false);
     function handleClick(index) {
       setActiveButton(index);
     }
-    console.log("active button: "+ activeButton)
+    // console.log("active button: "+ activeButton)
 
     const toggleModal = useSelector(selectToggleModal);
     const [open, setOpen] = useState(toggleModal);
@@ -79,7 +79,7 @@ const FilterModal = ({parent}) => {
               {/* DESTINATION SECTIONS */}
               <div className='flex justify-center'>
                 <button 
-                onClick={() => handleClick(1)}
+                onClick={() => {handleClick(1); setChecked(false)}}
                 className={
                 `flex flex-col p-[0.8rem] hover:bg-gray-300 rounded-full 
                 lg:pr-[3rem] md:pr-[2rem] pr-[1rem]
@@ -100,24 +100,30 @@ const FilterModal = ({parent}) => {
                 initialSettings={{ startDate: '1/1/2014', endDate: '3/1/2014' }}
               > */}
               <button className='flex justify-center bg-red items-center relative'>
+              
                   <button 
-                  onClick={() => handleClick(2)}
-                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full md:pr-[1.6rem] pr-[1rem] ${activeButton === 2 ? "visited shadow-2xl" : ""}`}>
+                  onClick={() =>{setChecked(true); handleClick(2)}}
+                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full md:pr-[1.6rem] pr-[1rem] ${(activeButton===2||activeButton===3) ? "visited shadow-2xl opacity-0" : ""}`}>
                     <span className={span1}>Check in</span>
                     <span className={span2}>Add Dates</span>
                   </button>
+ 
+
+                
                   <button 
-                  onClick={() => handleClick(3)}
-                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full lg:pr-[3rem] md:pr-[2rem] pr-[1rem]${activeButton === 3 ? "visited shadow-2xl" : ""}`}
+                  onClick={() => {setChecked(true); handleClick(3)}}
+                  className={`flex items-center flex-col p-[0.8rem] hover:bg-gray-300 rounded-full lg:pr-[3rem] md:pr-[2rem] pr-[1rem]${(activeButton===2||activeButton===3)? "visited shadow-2xl opacity-0" : ""}`}
                   > 
                     <span className={span1}>Check out</span>
                     <span className={span2}>Add Dates</span>
                   </button>
+              
                 <div ref={parent.current}>
-                  {(activeButton===2||activeButton===3) && <Calendar_ /> }
-
+                  {(activeButton===2||activeButton===3) && <Calendar_  containerRef={guestRef}/> }
                 </div>
               </button>
+
+
               {/* </DateRangePicker> */}
               {/* SEARCH AND GUESTS SECTION*/}
               <div 

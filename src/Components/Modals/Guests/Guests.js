@@ -11,7 +11,7 @@ const spanDesc = 'text-gray-700 text-[0.9rem]'
 const Guests = ({containerRef}) => {
   return (
     <Slide 
-    direction='down'  
+    direction='up'  
     container={containerRef.current}
     in={true}
     unmountOnExit> 
