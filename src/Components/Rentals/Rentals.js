@@ -1,55 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
-import sample from "../../Assets/sample.jpg"
+
 import Rental from './Rental'
+import { rental_items } from '../../airbnbLocaitons'
 
 // eslint-disable-next-line no-dupe-keys
-const rental_items=[
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    },
-    {
-        id:0,
-        images:[sample,sample,sample,sample]
-    }
-]
+
 const Rentals = () => {
   return (
     <>

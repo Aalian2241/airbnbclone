@@ -1,0 +1,72 @@
+
+import sample from "./Assets/sample.jpg"
+export const rental_items=[
+    {
+        id:0,
+        images:[sample,sample,sample,sample],
+        latitude:31.55220809512996,
+        longitude:74.30289745330812
+
+    },
+    {
+        id:1,
+        images:[sample,sample,sample,sample],
+        latitude:31.562374251105958,
+        longitude:74.30933475494386
+
+    },
+    {
+        id:2,
+        images:[sample,sample,sample,sample],
+        latitude:31.51848363518545,
+        longitude:74.32628631591798
+    },
+    {
+        id:3,
+        images:[sample,sample,sample,sample],
+        latitude:31.509190809039325,
+        longitude:74.30139541625978
+    },
+    {
+        id:4,
+        images:[sample,sample,sample,sample],
+        latitude:31.48313670206181,
+        longitude:74.3255138397217
+    },
+    {
+        id:5,
+        images:[sample,sample,sample,sample],
+        latitude:31.44946053607792,
+        longitude:74.20749664306642
+    },
+    {
+        id:6,
+        images:[sample,sample,sample,sample],
+        latitude:31.462859244339203,
+        longitude:74.27006721496583
+    },
+    {
+        id:7,
+        images:[sample,sample,sample,sample],
+        latitude:31.470948792961526,
+        longitude:74.27766323089601
+    },
+    {
+        id:8,
+        images:[sample,sample,sample,sample],
+        latitude:31.466812595250545,
+        longitude:74.26568984985353
+    },
+    {
+        id:9,
+        images:[sample,sample,sample,sample],
+        latitude:31.46446988893492,
+        longitude:74.26023960113527
+    },
+    {
+        id:10,
+        images:[sample,sample,sample,sample],
+        latitude:31.4813433856108,
+        longitude:74.29015159606935
+    }
+]

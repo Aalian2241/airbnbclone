@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import logo from '../../Assets/logo.png';
-import { useMediaQuery } from 'react-responsive';
 import thumbnail from '../../Assets/Airbnbthumbnail.png';
 import { useEffect } from 'react';
 
 const Left = () => {
   const [isMobile, setIsMobile] = useState(false);
-
-  const is1024px = useMediaQuery({ maxWidth: 1024 });
 
   useEffect(() => {
     function handleResize() {

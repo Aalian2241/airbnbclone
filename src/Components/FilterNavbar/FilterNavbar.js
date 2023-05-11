@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-grid-carousel'
-import { useMediaQuery } from 'react-responsive';
 import {filter_items} from "./data"
 import "./styles.css"
 const FilterNavbar = () => {

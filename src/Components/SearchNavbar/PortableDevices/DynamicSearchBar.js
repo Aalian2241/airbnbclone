@@ -1,6 +1,5 @@
 import React from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi'
-import { IoSearchCircle } from 'react-icons/io5'
 import "./styles.css";
 
 const DynamicSearchBar = () => {

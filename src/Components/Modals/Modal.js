@@ -8,7 +8,6 @@ import Guests from './Guests/Guests';
 import Destination from './Destination/Destination';
 
 import Calendar_ from './Calendar/Calendar';
-import {  Zoom } from '@mui/material';
 
 // const divClass = "flex flex-col p-[0.8rem] hover:bg-gray-300 rounded-full pr-[3rem]";
 const span2 = 'text-gray-600 lg:text-[1rem] md:text-[0.9rem] text-[0.7rem]  sm:min-w-[130%] md:w-[100%] lg:max-w-[100%]';

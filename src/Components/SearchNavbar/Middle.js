@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { BiMenu } from 'react-icons/bi'
+import React from 'react'
 import { IoSearch } from 'react-icons/io5'
 import "./styles.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectToggleModal, setToggleModal } from '../../Redux/Slices/slices';
-import FilterModal from "../Modals/Modal";
 const Middle = () => {
   const dispatch = useDispatch()
   const modalValue = useSelector(selectToggleModal)
-  const [modal, setModal] = useState(false);
   // useEffect(() => {
   //   // this will trigger every time modalValue changes
   //   console.log('modalValue changed:', modalValue);
