@@ -66,7 +66,7 @@ const FilterNavbar = () => {
             >
             
             {filter_items.map((item,index) => (
-              <Carousel.Item className="flex justify-center">
+              <Carousel.Item key={index} className="flex justify-center">
                 <button 
                 onClick={() => handleClick(index)}
                 className={`flex items-center mx-auto hover:border-b-gray-500 border-b flex-col py-[0.6rem] md:py-[0.75rem]  ${activeButton === index ? "visited" : ""}`} >

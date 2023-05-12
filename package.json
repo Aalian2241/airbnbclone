@@ -37,12 +37,14 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-sticky-box": "^2.0.4",
+    "react-sticky-sidebar": "^0.0.8",
     "react-tailwindcss-datepicker": "^1.6.0",
     "redux-toolkit": "^1.1.2",
     "rsuite": "^5.33.0",
     "slick-carousel": "^1.8.1",
     "tw-daterange": "^1.1.24",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "wil-react-sticky": "^1.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

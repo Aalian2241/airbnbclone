@@ -12,7 +12,7 @@ const Rentals = () => {
     <div className='p-4 relative'>
         <div className='grid grid-cols-1  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3 '>
             {rental_items.map((item, index) => (
-                <Rental images={item.images}/>
+                <Rental key={index} images={item.images}/>
             ))}
         </div>
     </div>

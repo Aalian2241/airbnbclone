@@ -20,6 +20,7 @@ const initialState = {
       month:null,
       day:null,
       year:null,},
+    navRef:null,
 }
 
 export const Slice = createSlice({ 
@@ -46,13 +47,16 @@ export const Slice = createSlice({
     },
     setCheckoutDate:(state,action)=>{
       state.checkOutDate = action.payload
+    },
+    setNavRef:(state,action)=>{
+      state.navRef = action.payload
     }
   },
 });
 
 
 // sending the data layer
-export const { setMapVisibility,setToggleModal,setDestination, setGuest, setTotalGuests, setCheckinDate, setCheckoutDate } = Slice.actions 
+export const { setMapVisibility,setToggleModal,setDestination, setGuest, setTotalGuests, setCheckinDate, setCheckoutDate, setNavRef } = Slice.actions 
   
 // grabbing the data layer: SELECTORS
 export const selectMapVisibility = (state) =>state.nav.mapVisibility
@@ -62,4 +66,5 @@ export const selectGuest = (state) =>state.nav.guest
 export const selectTotalGuests = (state) =>state.nav.totalGuests
 export const selectCheckinDate = (state) =>state.nav.checkinDate
 export const selectCheckoutDate =(state) => state.nav.checkOutDate
+export const selectNavRef = (state) => state.nav.navRef
 export default Slice.reducer

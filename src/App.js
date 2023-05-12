@@ -2,17 +2,21 @@ import Navbar from "./Components/NavBar/Navbar";
 import Rentals from "./Components/Rentals/Rentals";
 import { BrowserRouter, Link, Route,Routes, useLocation  } from "react-router-dom";
 import MapComponent from "./Components/MapView/MapComponent";
+import DetailPageMain from "./Components/DetailPageMain/DetailPageMain";
+import { useRef } from "react";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="">
+      <div className="" >
         {/* NavBar */}
-        <Navbar />
+        
+        <Navbar/>
         {/* Site content */}
         <Routes>
           <Route path="/map" element={<MapComponent />} />
           <Route path="/" element={<Rentals />} />
+          <Route path="/details" element={<DetailPageMain />} />
         </Routes>
         {/* Toggle Button */}
         <Footer />

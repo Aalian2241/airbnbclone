@@ -15,9 +15,9 @@ const Carousel = ({slides}) => {
     <div className=' max-w-screen-md'> 
       <div className=' overflow-hidden relative'>
         <div className='flex bg-transparent rounded-[1.6rem] relative border transition-transform ease-out duration-600 ' style={{transform: `translateX(-${curr*100-1}%)`}}>
-          {slides.map((s) => {
+          {slides.map((s,index) => {
             return (
-              <img className="object-cover rounded-[1.3rem] sm:h-[20rem] md:h-[20rem] w-full lg:h-[21rem]" src={s} />
+              <img key={index} className="object-cover rounded-[1.3rem] sm:h-[20rem] md:h-[20rem] w-full lg:h-[21rem]" src={s} />
             );
           })}
         </div>
